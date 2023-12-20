@@ -1,0 +1,1 @@
+print(" ".join(map(str,([x for x in (list(map(int, input("Ввод: ")))) if x % 2 != 0]))))
