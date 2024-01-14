@@ -12,6 +12,9 @@ from sklearn.manifold import TSNE
 import matplotlib.pyplot as plt
 
 def preprocessing(file_name: str,NLP: spacy.Language) -> List:
+    '''
+        Очищаем текст от стоп слов, пунктуации и приводи все к базе(лемматизация)
+    '''
     with open(file_name, encoding="utf-8") as f:
         text_file = f.read()
 
@@ -24,12 +27,14 @@ def preprocessing(file_name: str,NLP: spacy.Language) -> List:
     return text_cleared
 
 def vectorizing(text: List[str], NLP: spacy.Language) -> None:
+    '''Берем вектора'''
     array = []
     for word in text:
         array.append(NLP(word).vector)
     return array
 
 def graph(pca_matrix: List[List[float]], text: List[str])-> None:
+    '''Визуализация PCA'''
     plt.figure(figsize=(10, 8))
     plt.scatter(pca_matrix[:, 0], pca_matrix[:, 1])
     for i,word in enumerate(text):
