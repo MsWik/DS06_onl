@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./static/styles.css">
+    <title>Абоба</title>
+</head>
+<body>
+    <div>
+        <div id="input">
+            <form method="post" action="/predict">
+                <input type="text" title="Store" name="Store" class="Field" value="0">
+                <input type="text" title="Flag" name="Flag" class="Field" value="0">
+                <input type="text" title="Temperature" name="Temperature" class="Field" value="0">
+                <input type="text" title="Fuel_Price" name="Fuel_Price" class="Field" value="0">
+                <input type="text" title="CPI" name="CPI" class="Field" value="0">
+                <input type="text" title="Unemployment" name="Unemployment" class="Field" value="0">
+                <input type="text" title="Year" name="Year" class="Field" value="0">
+                <label for="button"> Предсказание: </label>
+                <input type="text" name="prediction_result" class="Field" readonly value="{{ prediction_result }}">
+                <input type="submit" value="predict" id="button">
+            </form>
+        </div>
+    </div>
+</body>
+</html>
